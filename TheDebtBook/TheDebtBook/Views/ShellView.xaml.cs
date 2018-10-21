@@ -23,7 +23,6 @@ namespace TheDebtBook.Views
         public ShellView()
         {
             InitializeComponent();
-            DataContext = this;
         }
     }
 }

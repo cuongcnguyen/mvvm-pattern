@@ -7,22 +7,39 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TheDebtBook.Models;
 using TheDebtBook.Views;
+using Action = System.Action;
 
 namespace TheDebtBook.ViewModels
 {
 
-    public class ChildViewModel : Screen
+    public abstract class ChildViewModel : ObservableObject
     {
-        public string Name { get; set; }
-        public int Amount { get; set; }
-
-        public bool CanClose { get; set; }
-
-        public void CloseAddDebtorWindow(ChildView2 childView2)
+        private ICommand _closeCommand;
+        public ICommand CloseCommand
         {
-            childView2?.Close();
+            get
+            {
+                return _closeCommand ?? (_closeCommand = new RelayCommand(
+                           param => Close(),
+                           param => CanClose()
+                       ));
+            }
         }
 
+        public event Action RequestClose;
+
+        public virtual void Close()
+        {
+            RequestClose?.Invoke();
+        }
+
+        public virtual bool CanClose()
+        {
+            return true;
+        }
+
+        public string Name { get; set; }
+        public int Amount { get; set; }
 
     }
 }
