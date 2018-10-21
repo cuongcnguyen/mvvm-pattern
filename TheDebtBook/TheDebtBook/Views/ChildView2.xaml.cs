@@ -11,31 +11,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Caliburn.Micro;
 
 namespace TheDebtBook.Views
 {
     /// <summary>
-    /// Interaction logic for ShellView.xaml
+    /// Interaction logic for ChildView2.xaml
     /// </summary>
-    public partial class ShellView : Window
+    public partial class ChildView2 : Window
     {
-        public ShellView()
+        public ChildView2()
         {
             InitializeComponent();
-            DataContext = this;
         }
-        /*
-        private void OpenChildWindow_Click(object sender, RoutedEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-        */
-
-        private void OpenChildPage_OnClick(object sender, RoutedEventArgs e)
-        {
-            ChildView2 addDebtorWindow = new ChildView2();
-            addDebtorWindow.Show();
         }
     }
 }
