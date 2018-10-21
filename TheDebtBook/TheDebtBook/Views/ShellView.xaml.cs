@@ -25,17 +25,5 @@ namespace TheDebtBook.Views
             InitializeComponent();
             DataContext = this;
         }
-        /*
-        private void OpenChildWindow_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        */
-
-        private void OpenChildPage_OnClick(object sender, RoutedEventArgs e)
-        {
-            ChildView2 addDebtorWindow = new ChildView2();
-            addDebtorWindow.Show();
-        }
     }
 }

@@ -6,15 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using TheDebtBook.Models;
+using TheDebtBook.Views;
 
 namespace TheDebtBook.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        
-
-        private BindableCollection<DebtorModels> _debtors = new BindableCollection<DebtorModels>();
-
         public ShellViewModel()
         {          
 
@@ -23,16 +20,12 @@ namespace TheDebtBook.ViewModels
             Debtors.Add(new DebtorModels { Name = "Tom Cruise", Amount = 300 });           
         }
        
-        public BindableCollection<DebtorModels> Debtors
-        {
-            get { return _debtors; }
-            set { _debtors = value; }
-        }
+        public BindableCollection<DebtorModels> Debtors { get; set; } = new BindableCollection<DebtorModels>();
 
-       public void OpenChildPage()
+        public void OpenChildPage()
         {
-            ActivateItem(new ChildViewModel());
+            ChildView2 addDebtorWindow = new ChildView2();
+            addDebtorWindow.Show();
         }
-
     }
 }
