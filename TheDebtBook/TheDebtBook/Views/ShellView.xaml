@@ -43,6 +43,6 @@
         <Button x:Name="OpenChildPage" Content="Add a debtor" Grid.Row="3" Grid.Column="1" Command="{Binding OpenChildPage}" />
             
         <!--Row 4-->
-        <ContentControl Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6" x:Name="ActiveItem"/>
+        <!--<ContentControl Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6" x:Name="ActiveItem"/>-->
     </Grid>
 </Window>
