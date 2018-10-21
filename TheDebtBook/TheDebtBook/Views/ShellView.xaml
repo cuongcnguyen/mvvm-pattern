@@ -26,16 +26,22 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        
+
         <!-- Row1 -->
-        <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" Grid.Row="1" Grid.Column="1"
-                   Grid.ColumnSpan="2"></TextBlock>
+       
+        <TextBlock Text="Debtors" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"></TextBlock>
 
         <!-- Row 2 -->
-        <TextBox MinWidth="100" Grid.Row="2" Grid.Column="1" x:Name="FirstName"></TextBox>
-        <TextBox MinWidth="100" Grid.Row="2" Grid.Column="2" x:Name="LastName"></TextBox>
+        
+
+        <DataGrid x:Name="Debtors" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" AutoGenerateColumns="True">
+
+        </DataGrid>
 
         <!-- Row 3 -->
-        
+        <Button x:Name="OpenChildPage" Content="Add a debtor" Grid.Row="3" Grid.Column="1" />
+            
+        <!--Row 4-->
+        <ContentControl Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6" x:Name="ActiveItem"/>
     </Grid>
 </Window>

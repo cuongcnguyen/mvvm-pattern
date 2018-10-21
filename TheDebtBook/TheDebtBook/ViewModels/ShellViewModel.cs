@@ -4,70 +4,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TheDebtBook.Models;
 
 namespace TheDebtBook.ViewModels
 {
-    public class ShellViewModel : Screen
+    public class ShellViewModel : Conductor<object>
     {
-        private string _firstName = "Cole";
-        private string _lastName;
-        private BindableCollection<PersonModel> _people = new BindableCollection<PersonModel>();
-        private PersonModel _selectedPerson;
-
-        public ShellViewModel()
-        {
-            People.Add(new PersonModel { FirstName = "Tim", LastName = "Corey" });
-            People.Add(new PersonModel { FirstName = "Bill", LastName = "Jones" });
-            People.Add(new PersonModel { FirstName = "Sue", LastName = "Storm" }); 
-        }
-
-        public string FirstName
-        {
-            get
-            {
-                return _firstName;
-            }
-            set
-            {
-                _firstName = value;
-                NotifyOfPropertyChange(() => FirstName);
-                NotifyOfPropertyChange(() => FullName);
-            }
-        }
-
-        public string LastName
-        {
-            get { return _lastName; }
-            set
-            {
-                _lastName = value;
-                NotifyOfPropertyChange(() => LastName);
-                NotifyOfPropertyChange(() => FullName);
-            }
-        }
-
-        public string FullName
-        {
-            get { return $"{ FirstName } { LastName }"; }        
-        }
-
-
-        public BindableCollection<PersonModel> People
-        {
-            get { return _people; }
-            set { _people = value; }
-        }
         
 
-        public PersonModel SelectedPerson
+        private BindableCollection<DebtorModels> _debtors = new BindableCollection<DebtorModels>();
+
+        public ShellViewModel()
+        {          
+
+            Debtors.Add(new DebtorModels { Name = "Mickey Mouse", Amount = -100 });
+            Debtors.Add(new DebtorModels { Name = "Donald Duck", Amount = 1321 });
+            Debtors.Add(new DebtorModels { Name = "Tom Cruise", Amount = 300 });           
+        }
+       
+        public BindableCollection<DebtorModels> Debtors
         {
-            get { return _selectedPerson; }
-            set
-            {
-                _selectedPerson = value;
-                NotifyOfPropertyChange(() => SelectedPerson);
-            }
+            get { return _debtors; }
+            set { _debtors = value; }
+        }
+
+       public void OpenChildPage()
+        {
+            ActivateItem(new ChildViewModel());
         }
 
     }
