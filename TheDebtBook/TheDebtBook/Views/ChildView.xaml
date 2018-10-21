@@ -39,7 +39,7 @@
         <TextBox MinWidth="100" Grid.Row="3" Grid.Column="2" ></TextBox>
 
         <!--Row 4-->
-        <Button x:Name="Save" Content="Save" Grid.Row="4" Grid.Column="1" Click="Button_Click"></Button>
+        <Button x:Name="Save" Content="Save" Grid.Row="4" Grid.Column="1" Click="Button_Click" Height="20" VerticalAlignment="Bottom"></Button>
         <Button Content="Cancel" Grid.Row="4" Grid.Column="2"></Button>
 
     </Grid>
