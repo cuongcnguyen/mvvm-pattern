@@ -16,13 +16,13 @@ using TheDebtBook.ViewModels;
 namespace TheDebtBook.Views
 {
     /// <summary>
-    /// Interaction logic for ChildView2.xaml
+    
     /// </summary>
-    public partial class ChildView2 : Window
+    public partial class AddDebtorView : Window
     {
-        public ChildView2()
+        public AddDebtorView()
         {
-            InitializeComponent();
+            
         }
     }
 }

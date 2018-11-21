@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace TheDebtBook.Models
 {
-    public class DebtorModels
+    public class DebtEntryModel
     {
-        public string Name { get; set; }
-
-        public int Amount { get; set; }
-
+        public DateTime Date { get; set; }
+        public int Amount { get; set; }        
     }
 }

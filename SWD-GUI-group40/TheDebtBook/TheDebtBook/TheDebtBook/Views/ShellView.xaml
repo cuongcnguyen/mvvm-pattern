@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheDebtBook.Views"
         mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800" WindowStartupLocation="CenterScreen"
-        d:DataContext="{d:DesignData }">
+        Title="ShellView" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -33,14 +32,11 @@
         <TextBlock Text="Debtors" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"></TextBlock>
 
         <!-- Row 2 -->
-        
-
         <DataGrid x:Name="Debtors" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" AutoGenerateColumns="True">
-
         </DataGrid>
 
         <!-- Row 3 -->
-        <Button x:Name="OpenChildPage" Content="Add a debtor" Grid.Row="3" Grid.Column="1" Command="{Binding OpenChildPage}" />
+        <Button x:Name="OpenAddDebtorPage" Content="Add a debtor" Grid.Row="3" Grid.Column="1"  />
             
         <!--Row 4-->
         <!--<ContentControl Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6" x:Name="ActiveItem"/>-->
