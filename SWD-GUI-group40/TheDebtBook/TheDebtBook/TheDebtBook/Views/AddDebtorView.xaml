@@ -40,7 +40,7 @@
 
         <!--Row 4-->
         <Button x:Name="AddDebtor" Content="Save" Grid.Row="4" Grid.Column="1" ></Button>
-        <Button Content="Cancel" Grid.Row="4" Grid.Column="2" ></Button>
+        <Button x:Name="Close" Content="Cancel" Grid.Row="4" Grid.Column="2" ></Button>
 
     </Grid>
 </Window>

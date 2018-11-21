@@ -47,7 +47,13 @@ namespace TheDebtBook.ViewModels
         {            
             Debtor d = new Debtor { Name = NewName, Amount = Debt };            
             debtors.Add(d);
-        }        
+            TryClose();
+        }
+
+        public void Close()
+        {
+            TryClose();
+        }
 
     }
 }
