@@ -9,7 +9,7 @@ namespace TheDebtBook.Models
     public class Debtor 
     {
         public string Name { get; set; }
-        private List<DebtEntryModel> debtCollection = new List<DebtEntryModel>();                
+                      
         public int Amount { get; set; }        
     }
 }
