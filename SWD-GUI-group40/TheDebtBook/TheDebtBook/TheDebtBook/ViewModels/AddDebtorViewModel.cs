@@ -14,31 +14,31 @@ namespace TheDebtBook.ViewModels
 
     public class AddDebtorViewModel : Screen
     {
-        private BindableCollection<Debtor> debtors;
+        private readonly BindableCollection<Debtor> _debtors;
         public AddDebtorViewModel(BindableCollection<Debtor> debtors)
         {
-            this.debtors = debtors;
+            this._debtors = debtors;
         }
 
-        private string newName;
+        private string _newName;
 
         public string NewName
         {
-            get { return newName; }
+            get => _newName;
             set
             {
-                newName = value;
+                _newName = value;
                 NotifyOfPropertyChange(() => NewName);
             }
         }                
 
-        private int debt;
+        private int _debt;
         public int Debt
         {
-            get { return debt; }
+            get => _debt;
             set
             {
-                debt = value;
+                _debt = value;
                 NotifyOfPropertyChange(() => Debt);
             }
         }
@@ -46,7 +46,7 @@ namespace TheDebtBook.ViewModels
         public void AddDebtor()
         {            
             Debtor d = new Debtor { Name = NewName, Amount = Debt };            
-            debtors.Add(d);
+            _debtors.Add(d);
             TryClose();
         }
 

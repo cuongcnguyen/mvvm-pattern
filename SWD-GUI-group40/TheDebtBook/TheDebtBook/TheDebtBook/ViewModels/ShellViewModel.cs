@@ -24,15 +24,15 @@ namespace TheDebtBook.ViewModels
         }
        
         public BindableCollection<Debtor> Debtors
-        {   get { return debtor; }
-            set { debtor = value; }
+        {   get => debtor;
+            set => debtor = value;
         }
 
         private Debtor selectedDebtor;
 
         public Debtor SelectedDebtor
         {
-            get { return selectedDebtor; }
+            get => selectedDebtor;
             set
             {
                 selectedDebtor = value;
